@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <textarea ng-model="$ctrl.post.description"></textarea>
+            <button ng-click="$ctrl.createPost()">Publish</button>
+          </div>
+        </div>
+      </div>
+      <div class="panel-group" ng-repeat="post in $ctrl.posts">
+        <div class="panel panel-default">
+          <div class="panel-body">{{post.description}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

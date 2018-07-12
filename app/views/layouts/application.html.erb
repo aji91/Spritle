@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SpritlePost</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body ng-app="spritlePostApp" ng-strict-di ng-view>
+  <app-header></app-header>
+  <ui-view></ui-view>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<form ng-submit="$ctrl.loginUser()">
+  <div class="container">
+    <h1>Sign In</h1>
+    <hr>
+    <div>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" ng-model="$ctrl.user.email" name="email" required>
+    </div>
+
+    <div>
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" ng-model="$ctrl.user.password" name="password" required>
+    </div>
+    
+    <div class="clearfix">
+      <button type="submit" class="signupbtn">Sign In</button>
+    </div>
+  </div>
+</form>
