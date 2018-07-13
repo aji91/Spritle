@@ -23,6 +23,10 @@ class Post < ApplicationRecord
 
   def liked
     user = RequestStore.store[:user]
-    likes.where(user_id: user.id).present?
+    likes.find_by(user_id: user.id).present?
+  end
+
+  def my_like
+    likes.find_by(user_id: user.id).try(:id)
   end
 end

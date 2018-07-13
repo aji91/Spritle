@@ -6,7 +6,7 @@ angular.module('posts')
       create: { method: 'POST', params: {user_id: '@user_id', post_id: '@post_id'} }
     }),
     member: $resource('/api/v1/users/:user_id/posts/:post_id/likes/:id', {}, {
-      query: { method: 'GET' }
+      destroy: { method: 'DELETE', params: {user_id: '@user_id', post_id: '@post_id', id: '@id'} }
     })
   };
 }]);

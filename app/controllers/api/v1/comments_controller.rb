@@ -32,7 +32,7 @@ class Api::V1::CommentsController < Api::V1::BaseController
   end
 
   def comment_params
-    params.require(:post).permit(
+    params.require(:comment).permit(
       :description,
       :user_id,
       :parent_id

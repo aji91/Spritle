@@ -4,12 +4,13 @@ class Api::V1::PostsController < Api::V1::BaseController
   def index
     RequestStore.store[:user] = @user
     posts = Post.includes(:likes, :comments)
-    respone(true, posts.page(params[:page]).per(PAGE_COUNT).to_json(include: :user, methods: [:comments_count, :likes_count, :can_like, :liked]))
+    respone(true, posts.page(params[:page]).per(PAGE_COUNT).to_json(include: :user, methods: [:comments_count, :likes_count, :can_like, :liked, :my_like]))
   end
 
   def show
+    RequestStore.store[:user] = @user
     post = Post.find_by_id(params[:id])
-    respone(true, post.to_json())
+    respone(true, post.to_json(include: :user, methods: [:comments_count, :likes_count, :can_like, :liked, :my_like]))
   end
 
   def create

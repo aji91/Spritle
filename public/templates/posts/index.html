@@ -12,6 +12,8 @@
       <div class="panel-group" ng-repeat="post in $ctrl.posts">
         <div class="panel panel-default">
           <div class="panel-body">{{post.description}}</div>
+          <a ng-click="$ctrl.likeOrUnlike(post)">{{post.likes_count}} Likes</a>
+          <a>{{post.comments_count}} Comments</a>
         </div>
       </div>
     </div>

@@ -41,6 +41,6 @@ class Api::V1::LikesController < Api::V1::BaseController
   end
 
   def like_params
-    params.require(:post).permit(:user_id)
+    params.require(:like).permit(:user_id)
   end
 end
